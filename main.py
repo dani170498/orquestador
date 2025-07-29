@@ -1,7 +1,16 @@
 from fastapi import FastAPI
 import uvicorn
+from app.api import ping  # Importá los routers que vayas creando
+from app.api import routes # Importa las rutas que has definido
 
-app = FastAPI()
+app = FastAPI(
+    title="Orquestador de Procesos",
+    version="1.0.0"
+)
+
+# Montar rutas
+app.include_router(ping.router)
+app.include_router(routes.router)  # Asegúrate de que 'routes' es el nombre correcto del archivo
 
 @app.get("/")
 async def read_root():

@@ -5,3 +5,7 @@ pydantic
 loguru
 streamlit
 datetime
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pytest
